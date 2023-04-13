@@ -15,6 +15,7 @@ int main()
         printf("##########################################\n");
         printf("1) Agregar pacientes a un archivo creado\n");
         printf("2) Encontrar datos del paciente\n");
+        printf("3) Salir del programa\n");
         /*Obtencion del numero, para elegir la opcion correspondiente*/
         printf("Elija una opcion: ");
         scanf("%d", &val);
