@@ -39,11 +39,11 @@ FILE *abrirarchivoleer(){
 FILE *abrirarchivosobrescribir(){
   FILE *p;
   char nombre[30];
-  printf("Ingrese el nombre del archivo: ");
+  printf("Ingrese el nombre del archivo que desea crear o desea abrir para a%cadir pacientes: ",164);
   scanf("%s", nombre);
   p = fopen(nombre, "a");
   if(p != NULL){
-    printf("El archivo a sido correctamente abierto para escribir\n");
+    printf("El archivo a sido correctamente abierto para a%cadir\n", 164);
   }
   else{
     printf("Error al abrir el archivo el archivo\n");
@@ -70,11 +70,12 @@ Pas *asignarmemoria(int n){
 /*Funcion que escribe los datos del paciente en la linea final del archivo*/
 void escribirenelarchivo(FILE *p, int n, Pas *arrpas){
   for (int i = 0; i <= n - 1; i++)
-    {
-    printf("Ingrese los datos del paciente de la siguiente manera (NombreApellido RutSinPutosYconGuion Dia Mes Año PlanElCualEligio ValorDelPlan):  ");
+    { 
+    printf("Ingrese los datos del paciente de la siguiente manera (NombreApellido RutSinPutosYconGuion Dia Mes A%co PlanElCualEligio ValorDelPlan):  ", 164);
     scanf("%s %s %d %d %d %d %d", arrpas[i].nombres, arrpas[i].rut, &arrpas[i].dia, &arrpas[i].mes, &arrpas[i].ano, &arrpas[i].plan, &arrpas[i].valor);
     fprintf(p,"\n%s %s %d %d %d %d %d",arrpas[i].nombres, arrpas[i].rut, arrpas[i].dia, arrpas[i].mes, arrpas[i].ano, arrpas[i].plan, arrpas[i].valor);
-  }
+    printf("Datos del paciente ingresados correctamente\n");
+    }
 }
 
 /*Funcion que busca en el archivo al paciente por su rut e imprime sus datos por pantalla*/
