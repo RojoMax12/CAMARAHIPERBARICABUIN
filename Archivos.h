@@ -3,20 +3,21 @@
 #include <conio.h>
 #include <string.h>
 
-
-
+/*Estructura para clasificar a los pacientes tomando su nombre, rut, dia/mes/año, el plan que tomo y el valor de este*/
 typedef struct Paciente
 {   char nombres[30], rut[12];
     int plan, valor,dia, mes, ano;
 }Pas;
 
-
+/*Funciones creadas para los archivos*/
 FILE *abrirarchivoleer();
 FILE *abrirarchivoescrib();
 FILE *abrirarchivosobrescribir();
 
+/*Funciones para asignar memoria a la estructura Tipo paciente*/
 Pas *asignarmemoria(int n);;
 
+/*Funciones que se utilizaran para las diferentes opciones del pograma*/
 void ordenar_datos(FILE *p, FILE *q, int n, Pas *arrpas);
 void escribirenelarchivo(FILE *p, int n, Pas *arrpas);
 void encontrarpersona();
@@ -83,7 +84,8 @@ Pas *asignarmemoria(int n){
     return a;    
 }
 
-
+/*Funcion que toma una archivo p y un archivo q el cual, lee el archivo p toma todos sus datos y los copia al archivo q ordenandolos por
+Nombre - Rut - Fecha - Plan - Valor*/
 void ordenar_datos(FILE *p, FILE *q, int n, Pas *arrpas){
     int i = 0;
     while(fscanf(p,"%s %s %d %d %d %d %d", arrpas[i].nombres, arrpas[i].rut, &arrpas[i].dia, &arrpas[i].mes, &arrpas[i].ano, &arrpas[i].plan, &arrpas[i].valor)!=EOF)
@@ -93,6 +95,7 @@ void ordenar_datos(FILE *p, FILE *q, int n, Pas *arrpas){
     }
 }
 
+/*Funcion todavia no terminanda, falta por revisar*/
 void escribirenelarchivo(FILE *p, int n, Pas *arrpas){
   int i = 0, count = 0;
   while (fscanf(p,"%s %s %d %d %d %d %d", arrpas[i].nombres, arrpas[i].rut, &arrpas[i].dia, &arrpas[i].mes, &arrpas[i].ano, &arrpas[i].plan, &arrpas[i].valor)!= EOF)
@@ -112,6 +115,7 @@ void escribirenelarchivo(FILE *p, int n, Pas *arrpas){
   }*/
 }
 
+/*Funcion que busca en el archivo al paciente por su rut e imprime sus datos por pantalla*/
 void encontrarpersona(FILE *p, int n, Pas *arrpas){
     char rut[12];
     int cont = 0;
