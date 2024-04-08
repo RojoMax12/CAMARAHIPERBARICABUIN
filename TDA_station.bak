@@ -1,0 +1,25 @@
+#lang racket
+
+
+
+;Dom : id (int) X name (String)  X type (station-type) X stop-time (positive integer)
+;Rec : station
+
+
+(define (get-id-station station)
+  (car station))
+
+(define (get-name-station station)
+  (car(cdr station)))
+
+         
+(define (station id name type stop-time)
+  (if (or (< stop-time 0) (not (integer? stop-time))(not(exact? stop-time)))
+      (error "El tiempo de parada no puede ser negativo o un valor decimal")
+      (list id name type stop-time)))
+
+(define (exist-station? verification-station id name type stop-time)
+  (if (or (equal? (get-id-station verification-station) id)
+          (equal? (get-name-station verification-station) name))
+      (error "La estación ya existe")
+      (station id name type stop-time)))

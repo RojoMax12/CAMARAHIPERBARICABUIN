@@ -1,0 +1,7 @@
+#lang racket
+
+(define c "c")
+(define r "r")
+(define m "m")
+(define t "t")
+

@@ -1,0 +1,17 @@
+#lang racket
+
+
+;Dom : id (int) X name (string) X rail-type (string) X section* (* señala que se pueden agregar 0 o más tramos)
+;Rec : line
+
+(define (line id name rail-type . seccion)
+  (if (not (null? seccion))
+      (cons id
+            (cons name
+                  (cons rail-type seccion)))
+      (cons id
+            (cons name
+                  (cons rail-type '())))))
+
+(define (get-id-line line)
+  (car line))

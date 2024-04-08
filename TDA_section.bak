@@ -1,0 +1,15 @@
+#lang racket
+
+;Dom : point1 (station)  X point2 (station) X distance (positive-number) X cost (positive-number U {0}).
+;Rec : section
+
+(define (get-points-section section)
+(list (car section) (car(cdr section))))
+
+(define (get-distance-section section)
+  (list-ref section 2))
+  
+(define(section point1 point2 distance cost)
+  (if(< cost 0)
+   (error "El costo es negativo")
+   (list point1 point2 distance cost)))

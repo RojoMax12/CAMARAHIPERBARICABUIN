@@ -1,0 +1,23 @@
+#lang racket
+
+(require "TDA_pcar.rkt")
+
+;OTRAS FUNCIONES
+
+
+
+
+
+;Nombre : train
+;Dom : id (int) X maker (string) X rail-type (string) X speed (positive number) X station-stay-time (positive number U {0}) X pcar* (* indica que pueden especificarse 1 o más carros)
+;Rec : train
+(define (train id maker rail-type speed station-stay-time . pcar)
+  (cons id
+        (cons maker
+              (cons rail-type
+                    (cons speed
+                          (cons station-stay-time
+                                (cons pcar null)))))))
+
+
+(provide (all-defined-out))
