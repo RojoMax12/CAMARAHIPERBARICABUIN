@@ -50,13 +50,4 @@
 (define t1 (train 1 "CAF" "UIC 60 ASCE" 70  2 pc1 pc0 pc3 pc2))
 
 
-(define m1 '(((1 "USACH" "c" 10) (2 "Estación Central" "c" 37) 2 50)
-            ((2 "Estación Central" "c" 37) (3 "ULA" "r" 31) 2.5 55)
-            ((3 "ULA" "r" 31) (3 "República" "r" 21) 1.5 30)
-            ((3 "República" "r" 21) (4 "Los Héroes" "c" 25) 3 45)
-            ((4 "Los Héroes" "c" 25) (6 "La Moneda" "r" 60) 1.4 50)
-            ((1 "USACH" "c" 10) (7 "Cochera" "m" 33) 3 0)
-            ((1 "USACH" "c" 10) (9 "San Pablo" "t" 30) 7 100)
-            ((6 "La Moneda" "r" 60) (10 "Los Dominicos" "t" 20) 15 250)))
-
 ;(append (map get-name-station (map get-point1(get-station-line l1))) (map get-name-station (map get-point2(get-station-line l1))))

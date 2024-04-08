@@ -80,8 +80,26 @@
 (define (line-cost line)
   (cond [(null? line)
          0]
+        
         (else
          (+ (get-cost-section(car line)(line-cost(cdr line)))))))
+
+;Name: line-section-cost
+;Dom: line (line) X station1-name (String) X station2-name (String)
+;Rec: positive-number U {0}
+
+
+(define (line-section-cost line station1-name station2-name)
+  (define (calc-line-section-cost line acc)
+    (cond
+      [(null? line) acc]
+      [else
+        (calc-line-section-cost (cdr line)
+                                    (+ acc
+                                       (get-cost-section (car line))))]))
+  (calc-line-section-cost (list-section-equal (name-equal-section1 (get-station-line line) station1-name)
+                                              (name-equal-section2 (get-station-line line) station2-name)) 0))
+
         
          
 ;1. acotar la lista para que quede la sub lista
